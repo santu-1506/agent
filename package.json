@@ -1,0 +1,21 @@
+{
+  "name": "ai-product-builder",
+  "version": "0.1.0",
+  "description": "Multi-agent AI system that builds full-stack products from plain-English requests.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "debug": "DEBUG=true node app.js",
+    "test:manager": "node --input-type=module --eval \"import { createManagerAgent } from './agents/manager/managerAgent.js'; createManagerAgent().handle('Build a login system').then(p => console.log(JSON.stringify(p, null, 2)))\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "dotenv": "^16.4.0",
+    "openai": "^4.77.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
